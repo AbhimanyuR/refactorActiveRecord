@@ -36,7 +36,7 @@ abstract class model {
             $sql = $this->update();
         } else {
             $sql = $this->insert();
-        } //
+        } 
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
         $array = get_object_vars($this);
