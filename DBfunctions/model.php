@@ -36,7 +36,7 @@ abstract class model {
             $sql = $this->update();
         } else {
             $sql = $this->insert();
-        }
+        } //
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
         $array = get_object_vars($this);
@@ -47,6 +47,7 @@ abstract class model {
         $id = $db->lastInsertId();
         return $id;
     }
+
     public function delete() {
         $db = dbConn::getConnection();
         $class_name = get_called_class();
