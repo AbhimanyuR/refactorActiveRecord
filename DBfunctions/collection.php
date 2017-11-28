@@ -24,7 +24,7 @@ abstract class collection {
         $tableName = get_called_class();
         $sql = 'SELECT * FROM ' . $tableName . ' WHERE id =' . $id;
         $statement = $db->prepare($sql);
-        $statement->execute();
+        $statement->execute(); //
         $class = static::$modelName;
         $statement->setFetchMode(\PDO::FETCH_CLASS, $class);
         $recordsSet =  $statement->fetchAll();
